@@ -42,5 +42,8 @@
     <Image Include="ananas.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Screenshot_4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

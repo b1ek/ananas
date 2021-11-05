@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="ananas.ico" />
+    <Image Include="Screenshot_4.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
