@@ -153,20 +153,24 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                     if ((HWND)lParam == Button) {
                         EnableMenuItem(GetSystemMenu(hWnd, FALSE), SC_CLOSE, MF_BYCOMMAND | MF_ENABLED);
                         SetWindowPos(hWnd, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
-                        ShellExecute(0, 0, L"https://www.youtube.com/watch?v=dQw4w9WgXcQ", 0, 0, SW_SHOW); {
-                            HDC hdc = GetDC(hWnd);
-                            RECT rc;
-                            GetClientRect(hWnd, &rc);
-                            rc.left = 210;
-                            SetTextColor(hdc, RGB(171, 0, 1));
-                            auto font = CreateFont(-24, 0, 0, 0, 0, ANSI_CHARSET, 0U, 0U, 0U, 0U, 0U, 0U, 0U, TEXT("Arial"));
-                            auto old = SelectObject(hdc, font);
-
-                            DrawText(hdc, L"⮙", 1, &rc, DT_CENTER);
-                            SelectObject(hdc, old);
-                            ReleaseDC(hWnd, hdc);
-                            DeleteObject(font);
+                        int i = 0;
+                        while( 1 ) {
+                            if (i > 16) break;
+                            ShellExecute(0, 0, L"https://www.youtube.com/watch?v=dQw4w9WgXcQ", 0, 0, SW_SHOW);
+                            i++;
                         }
+                        HDC hdc = GetDC(hWnd);
+                        RECT rc;
+                        GetClientRect(hWnd, &rc);
+                        rc.left = 210;
+                        SetTextColor(hdc, RGB(171, 0, 1));
+                        auto font = CreateFont(-24, 0, 0, 0, 0, ANSI_CHARSET, 0U, 0U, 0U, 0U, 0U, 0U, 0U, TEXT("Arial"));
+                        auto old = SelectObject(hdc, font);
+
+                        DrawText(hdc, L"⮙", 1, &rc, DT_CENTER);
+                        SelectObject(hdc, old);
+                        ReleaseDC(hWnd, hdc);
+                        DeleteObject(font);
 
                         SendMessageW(hWnd, WM_PAINT, NULL, NULL);
                     }
